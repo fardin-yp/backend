@@ -30,7 +30,7 @@ app.use(bodyParserErrorHandler());
    app.use(express.static("uploads"));
    app.use(cookieparser())
    app.use(cors({
-   origin:["*"],
+   origin:["https://frontend-lake-seven.vercel.app"],
    credentials:true,
    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
    allowedHeaders: ["Content-Type", "Authorization"],
