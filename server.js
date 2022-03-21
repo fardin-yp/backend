@@ -27,10 +27,7 @@ app.use(bodyParserErrorHandler());
 
    app.use(express.static("uploads"));
    app.use(cookieparser())
-   app.use(cors({
-   credentials:true,
-   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
-}))
+   app.use(cors({}))
 
 let users = []
 let OnlineUsers = []
