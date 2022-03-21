@@ -14,9 +14,7 @@ const session = require('express-session');
 const server = https.createServer(app);
 const MongoStore = require('connect-mongo');
 const multiparty = require('connect-multiparty');
-const io = require("socket.io")(server ,{
-   cors:{origin:"https://dream-web.vercel.app/"}
-});
+const io = require("socket.io")(server);
 const bodyParserErrorHandler = require('express-body-parser-error-handler')
 
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -30,7 +28,6 @@ app.use(bodyParserErrorHandler());
    app.use(express.static("uploads"));
    app.use(cookieparser())
    app.use(cors({
-   origin:["https://frontend-fardin-yp.vercel.app","https://dream-web.vercel.app/"],
    credentials:true,
    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
    allowedHeaders: ["Content-Type", "Authorization"],
